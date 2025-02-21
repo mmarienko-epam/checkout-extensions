@@ -6,7 +6,7 @@
 api_version = "2025-01"
 
 [[extensions]]
-name = "you-may-also-like"
+name = "You may also like"
 handle = "you-may-also-like"
 type = "ui_extension"
 
@@ -16,7 +16,7 @@ type = "ui_extension"
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 
 [[extensions.targeting]]
-module = "./src/Ymal.tsx"
+module = "./src/index.tsx"
 target = "purchase.checkout.cart-line-list.render-after"
 
 [extensions.capabilities]
