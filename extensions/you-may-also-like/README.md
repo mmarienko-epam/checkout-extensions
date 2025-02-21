@@ -1,14 +1,6 @@
 # Checkout UI Extension
 
-Checkout UI extensions let app developers build custom functionality that merchants can install at defined targets in the checkout flow. You can learn more about checkout UI extensions in Shopify’s [developer documentation](https://shopify.dev/api/checkout-extensions/checkout).
-
-## Prerequisites
-
-Before you start building your extension, make sure that you’ve created a [development store](https://shopify.dev/docs/apps/tools/development-stores) with the [checkout extensibility developer preview](https://shopify.dev/docs/api/release-notes/developer-previews#previewing-new-features).
-
-## Your new Extension
-
-Your new extension contains the following files:
+This extension contains the following files:
 
 - `README.md`, the file you are reading right now.
 - `shopify.extension.toml`, the configuration file for your extension. This file defines your extension’s name, where it will appear in the checkout, and other metadata.
