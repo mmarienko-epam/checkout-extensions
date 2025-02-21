@@ -6,8 +6,8 @@
 api_version = "2025-01"
 
 [[extensions]]
-name = "checkout-extension-1"
-handle = "checkout-extension-1"
+name = "you-may-also-like"
+handle = "you-may-also-like"
 type = "ui_extension"
 
 
@@ -16,8 +16,8 @@ type = "ui_extension"
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 
 [[extensions.targeting]]
-module = "./src/Checkout.tsx"
-target = "purchase.checkout.block.render"
+module = "./src/Ymal.tsx"
+target = "purchase.checkout.cart-line-list.render-after"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
@@ -44,9 +44,20 @@ api_access = true
 # your extension. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
 
-# [extensions.settings]
-# [[extensions.settings.fields]]
-# key = "banner_title"
-# type = "single_line_text_field"
-# name = "Banner title"
-# description = "Enter a title for the banner"
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "variantId1"
+type = "variant_reference"
+name = "Variant #1"
+[[extensions.settings.fields]]
+key = "variantId2"
+type = "variant_reference"
+name = "Variant #2"
+[[extensions.settings.fields]]
+key = "variantId3"
+type = "variant_reference"
+name = "Variant #3"
+[[extensions.settings.fields]]
+key = "hideCompareAtPrice"
+type = "boolean"
+name = "Hide compare at price"

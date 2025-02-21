@@ -1,0 +1,10 @@
+{
+  "heading": "You may also like",
+  "button": {
+    "text": "Add"
+  },
+  "errors": {
+    "cartChangesAreNotSupported": "Cart changes are not supported in this checkout",
+    "unexpectedIssueWhileAddingProduct": "There was an issue adding this product. Please try again."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "heading": "Вам Також Сподобається",
+  "button": {
+    "text": "Додати"
+  },
+  "errors": {
+    "cartChangesAreNotSupported": "Зміни корзини не доступні в цій касі",
+    "unexpectedIssueWhileAddingProduct": "Під час додавання продукту виникла проблема. Спробуйте ще раз."
+  }
+}
