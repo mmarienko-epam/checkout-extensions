@@ -3,7 +3,7 @@
 client_id = "d37bf1fd8543638c4f9f4a79fa36cc8e"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
-name = "checkout-extensions"
+name = "Custom Checkout Extensions"
 handle = "checkout-extensions-f79bef75"
 
 [build]

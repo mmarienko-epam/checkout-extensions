@@ -6,7 +6,7 @@
 api_version = "2025-01"
 
 [[extensions]]
-name = "You may also like"
+name = "You May Also Like"
 handle = "you-may-also-like"
 type = "ui_extension"
 
@@ -17,7 +17,8 @@ type = "ui_extension"
 
 [[extensions.targeting]]
 module = "./src/index.tsx"
-target = "purchase.checkout.cart-line-list.render-after"
+target = "purchase.checkout.block.render"
+default_placement = "ORDER_SUMMARY4"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
@@ -47,16 +48,20 @@ api_access = true
 [extensions.settings]
 [[extensions.settings.fields]]
 key = "variantId1"
+type = "single_line_text_field"
+name = "Variant Selection #1"
+[[extensions.settings.fields]]
+key = "variantId1"
 type = "variant_reference"
-name = "Variant #1"
+name = "Variant Selection #1"
 [[extensions.settings.fields]]
 key = "variantId2"
 type = "variant_reference"
-name = "Variant #2"
+name = "Variant Selection #2"
 [[extensions.settings.fields]]
 key = "variantId3"
 type = "variant_reference"
-name = "Variant #3"
+name = "Variant Selection #3"
 [[extensions.settings.fields]]
 key = "hideCompareAtPrice"
 type = "boolean"

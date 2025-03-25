@@ -17,15 +17,17 @@ import {
   useCartLines,
 } from "@shopify/ui-extensions-react/checkout";
 
-import { FETCH_PRODUCT_RECOMMENDATIONS_QUERY, FETCH_VARIANTS_QUERY } from "./queries";
+import {
+  FETCH_PRODUCT_RECOMMENDATIONS_QUERY,
+  FETCH_VARIANTS_QUERY,
+} from "./queries";
 import { IRecommendedProduct, IProductVariant } from "./interfaces";
 
 import LineItem from "./components/LineItem";
 
-export default reactExtension(
-  "purchase.checkout.cart-line-list.render-after",
-  () => <Extension />
-);
+export default reactExtension("purchase.checkout.block.render", () => (
+  <Extension />
+));
 
 function Extension() {
   const { query } = useApi();
@@ -92,29 +94,31 @@ function Extension() {
   }
 
   if (loading) {
-    return   <BlockStack spacing="loose">
-    <Divider />
-    <Heading level={2}>{translate("heading")}</Heading>
-    <BlockStack spacing="base">
-      {[...Array(3)].map((_, index) => (
-        <InlineLayout
-          key={index}
-          spacing="base"
-          columns={[64, "fill", "auto"]}
-          blockAlignment="center"
-        >
-          <SkeletonImage aspectRatio={1} />
-          <BlockStack spacing="extraTight">
-            <SkeletonText size="small" inlineSize="base" />
-            <SkeletonText size="small" inlineSize="small" />
-          </BlockStack>
-          <Button kind="secondary" disabled={true}>
-            {translate("button.text")}
-          </Button>
-        </InlineLayout>
-      ))}
-    </BlockStack>
-  </BlockStack>;
+    return (
+      <BlockStack spacing="loose">
+        <Divider />
+        <Heading level={2}>{translate("heading")}</Heading>
+        <BlockStack spacing="base">
+          {[...Array(3)].map((_, index) => (
+            <InlineLayout
+              key={index}
+              spacing="base"
+              columns={[64, "fill", "auto"]}
+              blockAlignment="center"
+            >
+              <SkeletonImage aspectRatio={1} />
+              <BlockStack spacing="extraTight">
+                <SkeletonText size="small" inlineSize="base" />
+                <SkeletonText size="small" inlineSize="small" />
+              </BlockStack>
+              <Button kind="secondary" disabled={true}>
+                {translate("button.text")}
+              </Button>
+            </InlineLayout>
+          ))}
+        </BlockStack>
+      </BlockStack>
+    );
   }
 
   if (!loading && variants.length === 0) {
